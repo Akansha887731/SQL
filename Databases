@@ -1,0 +1,110 @@
+# SQL: Databases
+
+# CREATE Databases
+
+### Creating a Database
+
+- **Command:** `CREATE DATABASE` is used to create a new database.
+- **Syntax:** `CREATE DATABASE database_name;`.
+- **Best Practice:** Use `CREATE DATABASE IF NOT EXISTS database_name;` to **avoid errors** if the database already exists.
+- **Verification:** To check if the database was created, use `SHOW DATABASES;`.
+- **Switching:** To work within the new database, use the `USE database_name;` command.
+- **Deletion:** Use `DROP DATABASE database_name;` to permanently delete a database and all of its contents.
+
+---
+
+### Creating a Table
+
+- **Command:** `CREATE TABLE` is used to define a table, which is where data is stored in rows and columns.
+- **Syntax:** You must define column names, data types (e.g., `INT`, `VARCHAR`), and constraints.
+    
+    ```sql
+    CREATE TABLE table_name (
+        column1 datatype constraint,
+        column2 datatype constraint,
+        ...
+    );
+    ```
+    
+- **Example:** A `Student` table with an `INT` column for `StudentID` and a `VARCHAR` column for `Name`.
+
+```sql
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Subject VARCHAR(50)
+    ...
+);
+```
+
+- **Key Constraints:**
+    - **`PRIMARY KEY`**: Defines a unique identifier for each row.
+    - **`NOT NULL`**: Ensures a column cannot be empty.
+- **Verification:** To confirm the table exists within the current database, use `SHOW TABLES;`.
+- **Deletion:** Use `DROP TABLE table_name;` to permanently remove a table.
+
+# DROP Databases
+
+- **Command:** The `SQL DROP DATABASE` statement is used to permanently delete an entire database from the Database Management System (DBMS).
+- **Purpose:** To remove a database that is no longer needed or for reorganization purposes.
+- **Irreversible Action:** This command is permanent and cannot be undone. All associated objects, including tables, views, and stored procedures, are also deleted.
+- **Syntax:**
+    - `DROP DATABASE database_name;`.
+    - **Safer Syntax:** `DROP DATABASE IF EXISTS database_name;` is a best practice to prevent errors if the database does not exist.
+- **Verification:** You can use `SHOW DATABASES;` to confirm that the database has been deleted.
+
+### Important Considerations
+
+- **Backups:** You must always take a proper backup of the database before performing a `DROP` operation.
+- **Privileges:** You need the appropriate administrative privileges to execute this command.
+- **Replication:** Before dropping a database that is part of a replication setup, you must first remove it from replication.
+- **System Databases:** You cannot directly drop or edit system databases.
+- **No `WHERE` Clause:** Unlike `DELETE`, you cannot filter a `DROP` command; it removes the entire database.
+
+# RENAME Databases
+
+- **Command:** The `ALTER DATABASE` command is used to rename a database. The syntax varies slightly between different systems.
+- **SQL Server Syntax:**
+    
+    `ALTER DATABASE [current_database_name] MODIFY NAME = [new_database_name];`
+    
+- **PostgreSQL Syntax:**
+    
+    `ALTER DATABASE current_database_name RENAME TO new_database_name;`
+    
+- **MySQL:** MySQL does **NOT** support a direct `RENAME DATABASE` command. The alternative approach is a manual process:
+    1. Create a new database.
+    2. Rename and transfer each table individually from the old database to the new one using `RENAME TABLE old_database_name.table1 TO new_database_name.table1;`.
+    3. Drop the old database once all tables are transferred.
+
+### Important Considerations
+
+- **Downtime:** Renaming a database can temporarily make it inaccessible, so it's best to perform this during off-peak hours.
+- **Dependencies:** Any applications, scripts, or users that rely on the old database name must be updated to the new name.
+- **Permissions:** You must have administrative privileges to rename a database.
+- **Backups:** Always create a backup of the database before attempting to rename it to mitigate the risk of data loss.
+
+# SELECT Databases
+
+### `USE` Command
+
+- **Purpose:** The `USE` command selects a specific database to be the active one for the current session.
+- **Syntax:** `USE database_name;`.
+- **Behavior:** Once you run this, all subsequent queries (like `SELECT * FROM employees;`) will automatically target the tables within that database.
+- **Important Note:** The `USE` command is **NOT** a standard SQL command and is not supported in all systems (e.g., PostgreSQL). In those systems, you must specify the database during the connection string.
+
+### `SELECT` Command
+
+The `SELECT` command is used to query and retrieve data from tables. Its power comes from combining it with other clauses to filter, sort, and aggregate data.
+
+- **Basic Retrieval:**
+    - `SELECT * FROM table_name;`: Retrieves all columns and all rows.
+    - `SELECT column1, column2 FROM table_name;`: Retrieves specific columns.
+- **Filtering:** The **`WHERE`** clause is used to filter records based on a specified condition.
+    - **Example:** `SELECT * FROM employees WHERE age > 30;`
+- **Sorting:** The **`ORDER BY`** clause sorts the result set. You can sort in ascending (`ASC`) or descending (`DESC`) order.
+    - **Example:** `SELECT * FROM employees ORDER BY salary DESC;`
+- **Limiting:** The **`LIMIT`** clause restricts the number of rows returned. This is useful for performance, as you don't retrieve more data than you need.
+    - **Example:** `SELECT * FROM employees ORDER BY salary DESC **LIMIT** 5;`
+- **Aggregation:** The **`GROUP BY`** clause groups rows with the same values into summary rows, typically used with aggregate functions like `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()`.
+    - **Example:** `SELECT department, AVG(salary) FROM employees **GROUP BY** department;`
