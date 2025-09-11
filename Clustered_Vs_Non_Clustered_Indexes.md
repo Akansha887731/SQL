@@ -1,3 +1,5 @@
+# SQL: Clustered Vs Non-Clustered
+
 # Clustered Index
 
 A **clustered index** determines the physical storage order of the data rows in a table. Because the data itself is sorted based on the index key, a table can only have one clustered index. A common example is when a **primary key** is defined on a column; SQL Server automatically creates a clustered index on it.
@@ -39,6 +41,3 @@ https://www.youtube.com/watch?v=Ua08uVgsk4k&pp=0gcJCckJAYcqIYzv
 | **Memory/Disk** | Requires less memory. | Requires more memory due to a separate structure. |
 | **Creation** | Automatically created with a primary key. | Manually created on other columns. |
 
-![image.png](attachment:22548a52-c98f-4459-b117-420d0f0cdf36:image.png)
-
-![image.png](attachment:fdee6d00-e365-4d73-a178-e16b19160d53:image.png)
