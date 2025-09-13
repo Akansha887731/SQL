@@ -1,3 +1,5 @@
+# SQL: Transactions
+
 - SQL transactions are a series of SQL operations that are treated as a single, indivisible unit of work.
 - They ensure that all operations within the unit either succeed completely or fail completely, maintaining data integrity.
 - The reliability of transactions is based on the **ACID** properties:
