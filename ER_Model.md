@@ -3,7 +3,8 @@
 - The **Entity-Relationship (ER) Model** is a high-level conceptual data model that helps in designing databases. It provides a graphical representation of the logical structure of a database, including entities, their attributes, and the relationships between them.
 - An **Entity-Relationship Diagram (ERD)** is the visual blueprint of this model, used to design and debug relational databases.
 
-![image.png](attachment:a36f5e30-be35-4023-b991-d81545c0e73b:image.png)
+<img width="1000" height="393" alt="image" src="https://github.com/user-attachments/assets/e2450b90-e5b9-497f-ad2d-e00fd90ae683" />
+
 
 ---
 
