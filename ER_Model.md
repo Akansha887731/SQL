@@ -15,7 +15,8 @@
     - **Weak Entity**: An entity that cannot be uniquely identified without a strong entity. It's dependent on its "identifying entity" and is represented by a **double rectangle**.
     - Example :
     
-    ![image.png](attachment:f6d04656-38c2-409b-8822-51cf3b460459:image.png)
+<img width="621" height="141" alt="image" src="https://github.com/user-attachments/assets/52316059-4611-4bbf-ad9d-bf57dabe42c2" />
+
     
 - **Attribute**: A property that describes an entity. For example, `StudentID`, `Name`, or `Age` for a `Student` entity. Attributes are represented by an **oval**.
     - **Key Attribute**: An attribute that uniquely identifies an entity instance (e.g., `StudentID`). It's underlined in an ERD.
@@ -23,7 +24,7 @@
     - **Multivalued Attribute**: An attribute that can hold multiple values for a single entity (e.g., a `Student` can have multiple `Phone_Numbers`). Represented by a **double oval**.
     - **Derived Attribute**: An attribute that can be calculated or derived from other attributes (e.g., `Age` from `Date of Birth`). Represented by a **dashed oval**.
 
-![image.png](attachment:20c1ec62-ce2e-4927-a8f6-a0f5f68267e6:image.png)
+<img width="1022" height="693" alt="image" src="https://github.com/user-attachments/assets/466189f3-465f-40ea-9c07-1b12f75540af" />
 
 - **Relationship**: An association between two or more entities. Relationships are represented by a **diamond**.
     - **Degree of a Relationship**: The number of entity sets participating in a relationship.
@@ -40,7 +41,8 @@ These concepts define the numerical constraints of a relationship.
 - **Cardinality**: The maximum number of times an entity can participate in a relationship.
     - **One-to-One (1:1)**: Each entity in one set is linked to at most one entity in the other set.
     
-    ![image.png](attachment:6aff853f-2b17-4396-93eb-b0430b33844c:image.png)
+    <img width="862" height="313" alt="image" src="https://github.com/user-attachments/assets/696f3c93-9e28-48f7-a308-5320464d9d51" />
+
     
     - **One-to-Many (1:N)**: One entity can be associated with multiple entities in another set.
     
@@ -48,11 +50,14 @@ These concepts define the numerical constraints of a relationship.
     
     - **Many-to-One (N:1)**: Multiple entities in one set can be associated with a single entity in another set.
     
-    ![image.png](attachment:d1e82c42-37e3-4bb8-a7ba-e076e36dc131:image.png)
+   <img width="862" height="313" alt="image" src="https://github.com/user-attachments/assets/87162b82-34c4-472c-acd5-38961bd80b91" />
+
+
     
     - **Many-to-Many (M:N)**: Multiple entities can be associated with multiple entities.
     
-    ![image.png](attachment:73fad663-54ad-43b3-8390-d2285a2e3459:image.png)
+   <img width="862" height="313" alt="image" src="https://github.com/user-attachments/assets/1dd5128f-0faa-4ca6-8e14-89c31a7ec886" />
+
     
 - **Participation Constraint**: Specifies whether an entity must participate in a relationship.
     - **Total Participation**: Every entity instance in a set must participate in the relationship. Shown with a **double line** connecting the entity to the relationship.
@@ -60,7 +65,8 @@ These concepts define the numerical constraints of a relationship.
     
     The diagram depicts the ‘Enrolled in’ relationship set with Student Entity set having total participation and Course Entity set having partial participation.
     
-    ![image.png](attachment:de9e0df2-0904-465a-83e2-60e882a4cef0:image.png)
+    <img width="982" height="192" alt="image" src="https://github.com/user-attachments/assets/7ec82dde-b8a8-4917-8a0d-456ef9e08587" />
+)
     
 
 ---
@@ -80,3 +86,5 @@ Converting an ERD to a relational model (tables) is a critical step in database 
 # Example
 
 The below diagram is our final entity relationship diagram for bank with all entities, their attributes and the relationship between them with the PRIMARY KEY and Cardinality ratio.
+<img width="1093" height="522" alt="image" src="https://github.com/user-attachments/assets/05a75bb9-f7a4-4979-90e0-94aca1a784cc" />
+
