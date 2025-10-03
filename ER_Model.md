@@ -46,7 +46,8 @@ These concepts define the numerical constraints of a relationship.
     
     - **One-to-Many (1:N)**: One entity can be associated with multiple entities in another set.
     
-    ![image.png](attachment:5ca9a709-c2e8-434e-aeb9-27c9cdcc2052:image.png)
+  <img width="862" height="313" alt="image" src="https://github.com/user-attachments/assets/83629d0d-3aab-4326-9fee-c5589ff6e96d" />
+
     
     - **Many-to-One (N:1)**: Multiple entities in one set can be associated with a single entity in another set.
     
